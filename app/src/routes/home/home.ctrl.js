@@ -8,8 +8,11 @@ const output = {
     },
     login: (req, res)=>{
         res.render('home/login');//->컨트롤러
+    },
+    register: (req,res)=>{
+        res.render('home/register');
     }
-}
+};
 
 const process = {
     login: (req, res)=>{
@@ -17,22 +20,6 @@ const process = {
         const response = user.login();
         console.log(response);
         return res.json(response);
-        // const id = req.body.id,
-        //     password  = req.body.password;
-        
-        // const users = UserStorage.getUsers("id", "password");
-        // const response = {};
-        // if(users.id.includes(id)){
-        //     const idx = users.id.indexOf(id);
-        //     if(users.password[idx] === password){
-        //         response.success = true;
-        //         return res.json(response);
-        //     }
-        // }
-        // response.success = false;
-        // response.message = "로그인에 실패하셨습니다";
-
-        // return res.json(response);
     }
 };
 
