@@ -1,5 +1,6 @@
 "use strict";
 
+const { response } = require("express");
 const UserStorage = require("./UserStorage");
 
 class User{
@@ -22,7 +23,8 @@ class User{
 
     register(){
         const client = this.body;
-        UserStorage.save(client);
+        const response = UserStorage.save(client);
+        return response;
     }
 }
 
