@@ -1,15 +1,22 @@
 "use strict";
 
-const hello = (req, res)=>{
-    res.render('home/index');
+const output = {
+    hello: (req, res)=>{
+        res.render('home/index');
+    },
+    login: (req, res)=>{
+        res.render('home/login');//->컨트롤러
+    }
 }
 
-const login = (req, res)=>{
-    res.render('home/login');//->z컨트롤러
+const process = {
+    login: (req, res)=>{
+        console.log(req.body);
+    }
 }
 
 module.exports = {
-    hello,
-    login,
+    output,
+    process
 };
 //=>키값없으면 같은이름의 키값
