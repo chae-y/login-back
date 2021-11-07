@@ -34,6 +34,7 @@ function register(){
         if(res.success){
             location.href = "/login";
         }else{
+            console.log(res.message);
             alert(res.message);
         }
     })
